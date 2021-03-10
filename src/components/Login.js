@@ -30,8 +30,8 @@ class Login extends Component {
       .then((response) => {
         if (response.data.user) {
           console.log(response.data.user);
-          this.props.history.push('/profile');
           localStorage.setItem('Profile', JSON.stringify(response.data.user));
+          this.props.history.push('/profile');
         } else {
           this.setState({
             serverResponse: response.data,
